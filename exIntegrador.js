@@ -9,9 +9,6 @@ let estoque = [
     { produto: 'Abacaxi', preco: 8, qtdVendida: 40 }
 ];
 
-// 5. Encontre um produto e atribua a ele um novo valor (reutilize o código que permite encontrar o produto pelo nome).
-// 6. Calcule o lucro total após pagar 45% do lucro em impostos.
-
 // 1. Calcular o lucro total de todos os produtos;
 
 let totalProdutos = () => {
@@ -59,3 +56,18 @@ let maiorLucro = () => {
     console.log(estoque);
 }
 maiorLucro();
+
+// 5. Encontre um produto e atribua a ele um novo valor (reutilize o código que permite encontrar o produto pelo nome).
+let novoPreco = (item, valor) => {
+    let produto = estoque.filter((nome) => {
+        if (nome.produto === item) {
+            nome.preco = valor;
+        };
+        return nome.produto === item;
+    }
+    );
+    console.log(produto);
+};
+novoPreco('Abacaxi', 100);
+
+// 6. Calcule o lucro total após pagar 45% do lucro em impostos.
