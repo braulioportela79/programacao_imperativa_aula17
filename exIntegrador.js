@@ -6,10 +6,9 @@ let estoque = [
     { produto: 'Maçã', preco: 5, qtdVendida: 50 },
     { produto: 'Banana', preco: 3, qtdVendida: 150 },
     { produto: 'Laranja', preco: 2, qtdVendida: 80 },
-    { produto: 'Abacaxi', preco: 8, qtdVendida: 20 }
+    { produto: 'Abacaxi', preco: 8, qtdVendida: 40 }
 ];
 
-// 4. Classifique todos os produtos pela quantidade de dinheiro que geraram.
 // 5. Encontre um produto e atribua a ele um novo valor (reutilize o código que permite encontrar o produto pelo nome).
 // 6. Calcule o lucro total após pagar 45% do lucro em impostos.
 
@@ -45,3 +44,18 @@ let produtoVendido = valor => {
     });
 };
 produtoVendido(200);
+
+// 4. Classifique todos os produtos pela quantidade de dinheiro que geraram.
+
+let maiorLucro = () => {
+    estoque.sort(function (a, b) {
+        if (a.preco * a.qtdVendida < b.preco * b.qtdVendida) {
+            return 1;
+        };
+        if (a.preco * a.qtdVendida > b.preco * b.qtdVendida) {
+            return -1;
+        };
+    });
+    console.log(estoque);
+}
+maiorLucro();
