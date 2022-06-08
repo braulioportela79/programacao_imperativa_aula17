@@ -27,7 +27,7 @@ totalProdutos();
 // 2. Permitir pesquisar um produto pelo nome e calcular seu lucro total;
 
 let lucroProduto = item => {
-    let produto = estoque.filter((nome) => nome.produto === item);
+    let produto = estoque.filter(nome => nome.produto === item);
     let getTotal = (total, item) => {
         return total + (item.preco * item.qtdVendida);
     };
@@ -38,3 +38,10 @@ lucroProduto('Banana');
 
 // 3. Permite receber um valor e indicar todos os produtos que venderam mais que esse valor;
 
+let produtoVendido = valor => {
+    estoque.map(e => {
+        if (e.preco * e.qtdVendida > valor)
+            console.log(`Produto vendido acima de R$${valor}: ${e.produto}`);
+    });
+};
+produtoVendido(200);
