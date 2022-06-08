@@ -11,14 +11,14 @@ let estoque = [
 
 // 1. Calcular o lucro total de todos os produtos;
 
-let totalProdutos = () => {
+let lucroTotal = () => {
     let getTotal = (total, item) => {
         return total + (item.preco * item.qtdVendida);
     };
     let lucroTotal = estoque.reduce(getTotal, 0);
     console.log(`O lucro total de todos os produtos é R$${lucroTotal}`);
 };
-totalProdutos();
+lucroTotal();
 
 // 2. Permitir pesquisar um produto pelo nome e calcular seu lucro total;
 
@@ -68,6 +68,16 @@ let novoPreco = (item, valor) => {
     );
     console.log(produto);
 };
-novoPreco('Abacaxi', 100);
+novoPreco('Abacaxi', 10);
 
 // 6. Calcule o lucro total após pagar 45% do lucro em impostos.
+
+let lucroTotalImposto = () => {
+    let getTotal = (total, item) => {
+        return total + (item.preco * item.qtdVendida);
+    };
+    let lucroTotal = estoque.reduce(getTotal, 0);
+    let lucroTotalImposto = lucroTotal - lucroTotal * (45 / 100);
+    console.log(`O lucro total de todos os produtos após pagar 45% de imposto é R$${lucroTotalImposto}`);
+};
+lucroTotalImposto();
