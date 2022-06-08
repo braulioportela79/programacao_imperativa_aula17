@@ -1,5 +1,4 @@
 // 1. Crie um array de números pares, e utilizando a função .map() nesse array, crie um novo array com apenas números ímpares.
-
 let numPar = [10, 20, 40, 60, 80];
 let numImpar = numPar.map(num => num + 1);
 console.log(numImpar);
@@ -11,7 +10,6 @@ console.log(maria);
 
 // 3. Crie um array de números e utilize a função .reduce() para devolver uma string com os números formatados.
 // Exemplo [1,5,9,3,7] => “1 – 5 – 9 – 3 – 7”
-
 let arrayNum = [1, 5, 9, 3, 7];
 let stringNum = arrayNum.reduce((acc, cur) => {
     return `${acc} - ${cur}`

@@ -51,5 +51,3 @@ let alunos = [
 
 ordernarNomeAluno(alunos);
 ordernarNotaAluno(alunos);
-
-
